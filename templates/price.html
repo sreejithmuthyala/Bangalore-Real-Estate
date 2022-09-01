@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>price</title>
+    <style>
+        #main {
+            display: flex;
+            justify-content: space-evenly;}
+    </style>
+</head>
+<body>
+    <div>
+    <div><h2>Estimated_Price : {{estimated_price}} lakhs</h2></div>
+    <div>
+        <a href="compose">
+            <button>
+                Compose a mail
+            </button>
+        </a>
+    </div>
+    </div>
+    <h2>The list of the broker's usernames are mentioned below</h2>
+    {% for i in bl %}
+    <h3>{{i}}</h3><br>
+    {% endfor %}
+</body>

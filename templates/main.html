@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <h2>hello, {{user.username}}</h2>
+    <br>
+    <a href="sent">
+        <button>
+            sent mails
+        </button>
+    </a>
+    <a href="receive">
+        <button>
+            received mails
+        </button>
+    </a>
+    <h4>Please enter the valid inputs to estimate the prices of the houses</h4>
+    <form action="estimate_price" method="post">
+        {% csrf_token %}
+        <h5>Area (Square Feet)</h5>
+        <input type="number" name="area" placeholder="type only integers"><br>
+        <h5>BHK </h5>
+        <input type="number" name="bhk" placeholder="choose between 1-5"><br>
+        <h5>Bathrooms</h5>
+        <input type="number" name="bathrooms" placeholder="choose between 1-5"><br>
+        <h5>Location</h5>
+        <input type="text" name="location" placeholder="choose a location"><br>
+        <br>
+        <input type="submit">
+
+    </form>
+
+    {% else %}
+    <h2>You are not logged in</h2>
+    {% endif %}
+</body>

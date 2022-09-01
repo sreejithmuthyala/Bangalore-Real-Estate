@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sent</title>
+    <style>
+        table, th, td {
+           border: 1px solid black;
+        }
+     </style>
+</head>
+<body>
+    <h2> this is sent box</h2>
+    <div>
+        <table>
+            <tr>
+                <th> Time</th>
+                <th>To User</th>
+                <th>Subject</th>
+                <th>Body of the mail</th>
+            </tr>
+            {% for x in sm1 %}
+            <tr>
+                {% for i in x %}
+                <th> {{ i }} </th>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+    {{sm3}}
+</body>
